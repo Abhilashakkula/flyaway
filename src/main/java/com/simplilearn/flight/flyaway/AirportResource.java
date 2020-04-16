@@ -22,6 +22,7 @@ public class AirportResource {
 	@GET
     @Produces("application/json")
     public List<Airport> getAirport() {
+		System.out.println("Connection Success");
         AierportDAO dao = new AierportDAO();
         List Airports = dao.getAirports();
         return Airports;

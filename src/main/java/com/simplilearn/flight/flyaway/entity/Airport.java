@@ -2,8 +2,10 @@ package com.simplilearn.flight.flyaway.entity;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.xml.bind.annotation.XmlRootElement;
 
 @Entity
+@XmlRootElement
 public class Airport {
 
 	@Id

@@ -54,7 +54,7 @@ public class AierportDAO {
                return 0;  
          Session session = SessionUtil.getSession();
             Transaction tx = session.beginTransaction();
-            String hql = "update Airport set name = :name, countryIsoCode=:countryIsoCode, iataCode:=iataCode where id = :id";
+            String hql = "update Airport set name := name, countryIsoCode:= countryIsoCode, iataCode:=iataCode where id := id";
             Query query = session.createQuery(hql);
             
             query.setInteger("id",id);

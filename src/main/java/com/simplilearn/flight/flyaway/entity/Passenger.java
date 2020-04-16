@@ -2,6 +2,8 @@ package com.simplilearn.flight.flyaway.entity;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.persistence.UniqueConstraint;
@@ -11,19 +13,20 @@ import javax.persistence.UniqueConstraint;
 public class Passenger {
 
 	@Id
-	private String id;
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	private Integer id;
 	
 	@Column
 	private String firstName;
 	private String lastName;
-	
 	private String email;
-
+	private String password;
+	
 	public Passenger() {
 		super();
 	}
 
-	public Passenger(String id, String firstName, String lastName, String email) {
+	public Passenger(Integer id, String firstName, String lastName, String email) {
 		super();
 		this.id = id;
 		this.firstName = firstName;
@@ -31,11 +34,12 @@ public class Passenger {
 		this.email = email;
 	}
 
-	public String getId() {
+	
+	public Integer getId() {
 		return id;
 	}
 
-	public void setId(String id) {
+	public void setId(Integer id) {
 		this.id = id;
 	}
 
@@ -61,6 +65,15 @@ public class Passenger {
 
 	public void setEmail(String email) {
 		this.email = email;
+	}
+	
+
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
 	}
 
 	@Override
